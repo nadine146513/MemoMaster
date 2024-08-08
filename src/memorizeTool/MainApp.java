@@ -5,7 +5,7 @@ import java.util.Scanner;
 import javax.swing.*;
 
 import memorizeTool.gui.MainFrame;
-
+//this is a comment
 public class MainApp {
 	private static String filePath; 
     public static void main(String[] args) {
