@@ -174,7 +174,6 @@ public class GamePanel extends JPanel {
         return true; // All guesses submitted
     }
 
-    // Method to proceed to next round
     private void proceedToNextRound() {
         round++;
         statusPanel.updateRound(round);
@@ -182,8 +181,45 @@ public class GamePanel extends JPanel {
             updateGameText(); // Update game text for the next round
         } else {
             // Handle game end situation
-            gameTextPane.setText("Congratulation! Total Points: " + points);
+            displayCongratulations();
         }
+    }
+    
+    private void displayCongratulations() {
+        gameTextPane.setText("Congratulation! Total Points: " + points);
+    
+       // Load the image
+ImageIcon congratsImage = null;
+try {
+    // Load the image from the file
+    Image img = ImageIO.read(new File("C:\\Users\\USP\\Desktop\\finally_plz.png"));
+
+    // Scale the image to fit within the panel dimensions
+    int panelWidth = getWidth();         // Get the width of the panel
+    int panelHeight = getHeight() ;   // Use half of the panel height (or adjust as needed)
+
+    // Scale the image smoothly
+    Image scaledImage = img.getScaledInstance(panelWidth, panelHeight, Image.SCALE_SMOOTH);
+
+    // Create an ImageIcon with the scaled image
+    congratsImage = new ImageIcon(scaledImage);
+
+} catch (IOException e) {
+    e.printStackTrace();
+}
+    
+        // Create a JLabel with the image
+        if (congratsImage != null) {
+            JLabel imageLabel = new JLabel(congratsImage);
+            imageLabel.setHorizontalAlignment(SwingConstants.CENTER); // Center the image
+    
+            // Add the image label to the panel
+            add(imageLabel, BorderLayout.SOUTH);
+        }
+    
+        // Revalidate and repaint the panel to make sure the image shows up
+        revalidate();
+        repaint();
     }
 
     private void checkGameOver(JFrame mainFrame) {
