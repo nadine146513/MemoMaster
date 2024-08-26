@@ -93,4 +93,4 @@ Before you begin, ensure you have the following installed on your machine:
    - Successfully completing all 8 rounds means you win the game.
      
 ## License
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.txt) file for details.
