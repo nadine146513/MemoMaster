@@ -5,10 +5,7 @@ This Java Swing application is designed to help students enhance their memorizat
 - [Screenshots](#screenshots)
 - [Installation](#installation)
 - [Usage](#usage)
-- [Features](#features)
-- [Contributing](#contributing)
 - [License](#license)
-- [Acknowledgements](#acknowledgements)
 
 
 ## Screenshots
@@ -41,28 +38,59 @@ Before you begin, ensure you have the following installed on your machine:
    - Open your terminal or command prompt.
    - Run the following command to clone the repository:
      ```bash
-     git clone https://github.com/yourusername/yourprojectname.git
+     git clone https://github.com/nadine146513/MemoMaster.git
      ```
 
 2. **Navigate to the Project Directory**
    - Change to the directory where the project was cloned:
      ```bash
-     cd yourprojectname
+     cd MemoMaster
      ```
 
+### Steps
+
 3. **Compile the Project**
-   - If you need to compile the code manually (depending on how you distribute the project):
+   - Navigate to the `src` directory:
      ```bash
-     javac -d bin src/com/yourpackage/*.java
+     cd src
+     ```
+   - Compile the Java files manually using the following command:
+     ```bash
+     javac memorizeTool/gui/*.java memorizeTool/AudioPlayer.java
      ```
    - Alternatively, you can use an IDE like Eclipse, IntelliJ IDEA, or NetBeans to open the project and compile it automatically.
 
 4. **Run the Application**
    - If you compiled the project manually:
      ```bash
-     java -cp bin com.yourpackage.MainClass
+     java memorizeTool.gui.MainFrame
      ```
-   - If you have a pre-built JAR file (replace `yourproject.jar` with the actual file name):
+   - If you have a pre-built JAR file (replace `MemoMaster.jar` with the actual file name):
      ```bash
-     java -jar yourproject.jar
+     java -jar MemoMaster.jar
      ```
+## Usage
+
+1. **Launch the Application**
+   - Upon opening the application, classical music designed to enhance focus will start playing automatically.
+
+2. **Start a New Session**
+   - Click the **Start** button to open a new window where you can enter the text you need to memorize.
+
+3. **Enter Your Text**
+   - Type or paste the text you wish to memorize into the provided field and click the **Submit** button.
+
+4. **Play the Game**
+   - The game begins with Round 1. Try to guess the missing words from the text. Press **Enter** after each guess.
+   - If your guess is correct, the corresponding box will turn green, and you will earn one point.
+   - If your guess is incorrect, the box will turn red, and you will lose one point.
+
+5. **Progress Through Rounds**
+   - The game consists of 8 rounds, with the number of missing words increasing progressively in each round.
+
+6. **End of Game**
+   - If your score reaches 0 points, the game ends, and you lose.
+   - Successfully completing all 8 rounds means you win the game.
+     
+## License
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
